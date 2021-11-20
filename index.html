@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Натали Чуличкова">
+    <link rel="stylesheet" href="pages/index.css">
+    <title>Mesto</title>
+</head>
+<body class="page">
+
+  <header class="header">
+    <img class="header__logo" src="" alt="Логотип Место">
+
+    <div class="header__logo"></div>
+            <div class="header__line"></div>
+          
+  </header>
+
+  <main class="content">
+    <section class="profile">
+      <img src="./images/ZakIvKusto.jpg" alt="Жак-Ив Кусто" class="profile__avatar">
+                <div class="profile__info">
+                    <h1 class="profile__name profile__name_edit">Жак-Ив Кусто</h1>
+                    <button class="profile__edit-button profile__edit-button_active"></button>
+                    <p class="profile__text profile__text_edit">Исследователь океана</p>
+                </div>
+                <button class="profile__add-button"></button>
+    </section>
+    <section class="elements">
+      <figure>
+        <img
+        src=""
+        alt="">
+        <figcaption></figcaption>
+      </figure>
+
+      <li class="cards__item">  
+        <img src="./images/yakutiya.jpg" class="cards__photo" alt="">
+        <div class="cards__info">
+          <h2 class="cards__name"></h2>
+          <button type="button" class="cards__like-button" aria-label="Нравится"></button> 
+        </div>
+      </li>
+
+      <div class="element">
+        <img src="./images/dombay.png" class="element__image" alt="">
+        <div class="element__info">
+            <p class="element__text"></p>
+            <button class="element__like-buttom"></button>
+        </div> 
+    </div>
+
+    </section>
+
+    <div class="popup">
+      <div class="popup__container">
+        <h2 class="popup__heading">Редактировать профиль</h2>
+        <form name="form-info">
+          <fieldset class="popup__input-container">
+            <input type="text" class="popup__item" name="nickname" placeholder="Жак-Ив Кусто" required>
+            <input type="text" class="popup__item" name="text" placeholder="Исследователь океана">
+          </fieldset> 
+          <button type="submit" class="popup__save-button">Сохранить</button>
+        </form>
+        <button type="button" class="popup__exit-button" aria-label="Выйти"></button>  
+      </div>
+    </div>
+
+    <div class="popup">
+      <div class="popup__content">
+          <svg  class="popup__close" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 18L12 10L20 2L18 0L10 8L2 0L0 2L8 10L0 18L2 20L10 12L18 20L20 18Z" fill="white"/>
+          </svg>
+          <h3 class="popup__title">Редактировать профиль</h3>
+          <form class="popup__form popup__form_edit">
+              <input class="popup__input popup__input_name" type="text" value="Жак-Ив Кусто">
+              <input class="popup__input popup__input_work" type="text" value="Исследователь океана">
+              <button class="popup__save-button popup__save-button_active" type="submit">Сохранить</button>
+          </form>
+      </div>
+  </div>
+
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copyright">&#169; 2021 Mesto Russia</p>
+  </footer>   
+</body>
+</html>
