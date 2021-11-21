@@ -1,9 +1,24 @@
 .profile {
-  max-width: calc(100% - 200px*2);
+  max-width: 880px;
   margin: 0 auto;
   padding: 36px 0 47px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   box-sizing: border-box;
   flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1024px) {
+  .profile {
+    width: 100%;
+    padding: 38px 19px 36px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .profile {
+    justify-content: center;
+  }
 }

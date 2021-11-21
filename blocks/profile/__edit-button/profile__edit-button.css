@@ -2,10 +2,9 @@
   width: 24px;
   height: 24px;
   background-image: url('/images/profile__edit-button.svg');
-  border: 1px solid #FFFFFF;
+  border: 1px solid #fff;
   box-sizing: border-box;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
-  
 }

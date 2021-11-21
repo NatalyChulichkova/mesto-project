@@ -1,4 +1,7 @@
 .profile__info {
-  display: grid;
-  grid-template-columns: minmax(294px, max-content) auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 336px;
 }
