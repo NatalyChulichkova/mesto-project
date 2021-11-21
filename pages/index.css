@@ -8,6 +8,12 @@
 
 /* Стили блока - profile */
 @import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__edit-button/profile__edit-button.css);
+@import url(../blocks/profile/__add-button/profile__add-button.css);
+@import url(../);
+@import url(../);
 
 /* Стили блока - elements */
 @import url(../blocks/elements/elements.css);

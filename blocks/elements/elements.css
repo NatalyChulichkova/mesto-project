@@ -1,6 +1,6 @@
 .elements {
-  padding: 51x 200px 66px;
-  margin:0 auto;
+  /* padding: 51x 200px 66px; */
+  /* margin:0 auto; */
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 282px);  
