@@ -1,4 +1,4 @@
 .profile__info {
   display: grid;
-  /* grid-template-columns:  */
+  grid-template-columns: minmax(294px, max-content) auto;
 }
