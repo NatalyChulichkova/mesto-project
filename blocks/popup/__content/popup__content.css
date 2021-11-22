@@ -1,0 +1,11 @@
+.popup__content {
+  max-width: 430px;
+  max-height: 330px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+}
