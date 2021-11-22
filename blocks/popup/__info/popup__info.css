@@ -8,3 +8,10 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+@media screen and (max-width: 767px) {
+  .popup__info {
+    width: 282px;
+    height: 322px;
+  } 
+}
