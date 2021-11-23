@@ -4,7 +4,6 @@
   top: 0;
   right: 0;
   display: flex;
-  justify-content: column;
   align-items: center;
   background-color: rgba(0, 0, 0, .5);
   width: 100%;
