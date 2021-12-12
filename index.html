@@ -27,7 +27,7 @@
       </div>
       <button class="profile__add-button" type="button"></button>
     </section>
-
+<!-- 
     <section>
       <ul class="elements">
         <li class="element">
@@ -73,7 +73,12 @@
           </div>
         </li>
       </ul>
-    </section>
+    </section> -->
+
+    <section>
+			<ul class="elements">
+			</ul>
+		</section>
 
   </main>
 
@@ -81,21 +86,55 @@
     <p class="footer__copyright">&#169; 2021 Mesto Russia</p>
   </footer> 
 
-  <section class="popup">
-    
+  <section class="popup popup_edit-profile" id="editprofile">
     <div class="popup__content">
       <button class="popup__close-button" type="button"></button>
       <form class="popup__info" name="form-profile">
         <h2 class="popup__title">Редактировать профиль</h2>
         <fieldset class="popup__form">
-          <input class="popup__item" type="text" name="nickname" placeholder="Жак-Ив Кусто" required>
-          <input class="popup__item" type="text" name="text" placeholder="Исследователь океана">
+          <input class="popup__item" type="text" name="nickname" placeholder="Жак-Ив Кусто" required id="name">
+          <input class="popup__item" type="text" name="text" placeholder="Исследователь океана" id="description">
         </fieldset> 
         <button class="popup__save-button" type="submit">Сохранить</button>
       </form>
     </div>
-    
   </section>
-  
+
+    <section class="popup popup_new-post" id="addplace">
+      <div class="popup__content">
+        <button class="popup__close-button" type="button"></button>
+        <form class="popup__info" name="form-profile">
+          <h2 class="popup__title">Новое место</h2>
+          <fieldset class="popup__form">
+            <input class="popup__item popup__item_new-place" type="text" name="place" placeholder="Название" required id="place">
+            <input class="popup__item popup__item_new-place" type="text" name="url" placeholder="Ссылка на картинку" id="link">
+          </fieldset> 
+          <button class="popup__save-button" type="submit">Создать</button>
+        </form>
+      </div>
+    </section>
+   
+
+    <div class="popup popup_photo" id=popup-photo>
+      <div class="popup__container-photo">
+        <button class="button_close" type="button"></button>
+        <img src="" alt="Фото" class="popup__image-popup">
+        <p class="popup__caption"></p>
+      </div>
+    </div>
+
+    
+    <template id="element-template">
+      <li class="element">
+        <button type="button" class="element__delete"></button>
+        <img src="" alt="Фото" class="element__photo">
+        <div class="element__info">
+          <h2 class="element__title"></h2>
+          <button type="button" class="element__like"></button>
+        </div>
+      </li>
+    </template>
+ 
+  <script src="./index.js"></script>
 </body>
 </html>
