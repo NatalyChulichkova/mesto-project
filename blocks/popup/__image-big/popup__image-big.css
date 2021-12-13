@@ -1,0 +1,4 @@
+.popup__image-big {
+	max-width: 100%;
+	object-fit: contain;
+}

@@ -26,7 +26,6 @@ const initialCards = [
   }
 ]; 
 
-// const profile = document.querySelector('.profile')
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__status');
 const editButton = document.querySelector('.profile__edit-button');
@@ -52,8 +51,8 @@ const cardTemplate = document.querySelector('#element-template').content;
 
 const popupPhoto = document.querySelector('#photo');
 const closeButtonPhoto = popupPhoto.querySelector('.popup__close-button');
-const photoLink = popupPhoto.querySelector('.popup__image-popup');
-const photoCaption = popupPhoto.querySelector('.popup__caption');
+const photoLink = popupPhoto.querySelector('.popup__image-big');
+const photoCaption = popupPhoto.querySelector('.popup__title-big');
 
 // Открытие и закрытие попапа
 function openPopup(popup) {
@@ -70,16 +69,6 @@ function openWindowProfile() {
 	jobInput.value = profileDescription.textContent;
 }
 
-// Редактирование имени
-function editProfile(evt) {
-	evt.preventDefault();
-	profileName.textContent = nameInput.value;
-	profileDescription.textContent = jobInput.value;
-	closePopup(popupProfile);
-}
-//function formSubmitHandler (evt) {
-//  evt.preventDefault();
-//formElement.addEventListener('submit', formSubmitHandler); 
 
 // Добавление карточки
 function createCard (link, name) {
@@ -140,7 +129,25 @@ closeButtonProfile.addEventListener('click', () => { closePopup(popupProfile); }
 closeButtonPlace.addEventListener('click', () => { closePopup(popupPlace); });
 closeButtonPhoto.addEventListener('click', () => { closePopup(popupPhoto); });
 
-popupProfile.addEventListener('submit', editProfile);
+
 popupPlace.addEventListener('submit', addCard);
 
 addInitialCards();
+
+// Редактирование имени
+function formSubmitHandler (evt) {
+  evt.preventDefault();
+  profileName.textContent = nameInput.value;
+  profileDescription.textContent = jobInput.value;
+  closePopup(popupProfile);
+}
+popupProfile.addEventListener('submit', formSubmitHandler); 
+
+
+// function editProfile(evt) {
+// 	evt.preventDefault();
+// 	profileName.textContent = nameInput.value;
+// 	profileDescription.textContent = jobInput.value;
+// 	closePopup(popupProfile);
+// }
+// popupProfile.addEventListener('submit', editProfile);
