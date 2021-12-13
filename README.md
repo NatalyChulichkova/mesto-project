@@ -11,6 +11,7 @@
 * методология БЭМ
 * Figma
 * Формы
+* Java Script
 
 
 **Figma**

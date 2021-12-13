@@ -1,15 +1,14 @@
 .profile__info {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
   width: 336px;
-  margin-left: 41px;
+  padding: 22px 30px 25px 30px;
 }
 
 @media screen and (max-width: 767px) {
   .profile__info {
-    justify-content: center;
+    width: 320px;
     margin: 0;
+    padding: 26px 0 36px;
   }
 }
