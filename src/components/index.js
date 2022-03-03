@@ -40,33 +40,47 @@ import '../pages/index.css';
 
 
 // Фотокарточки
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-]; 
+// const initialCards = [
+//   {
+//     name: 'Архыз',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+//   },
+//   {
+//     name: 'Челябинская область',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+//   },
+//   {
+//     name: 'Иваново',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+//   },
+//   {
+//     name: 'Камчатка',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+//   },
+//   {
+//     name: 'Холмогорский район',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+//   },
+//   {
+//     name: 'Байкал',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+//   }
+// ]; 
+import sahara from '../images/element_sahara.jpg';
+import kareliya from '../images/element_kareliya.jpg';
+import karachaevsk from '../images/element_karachaevsk.jpg';
+import elbrus from '../images/element_elbrus.jpg';
+import dombai from '../images/element_dombai.jpg';
+import Baikal from '../images/element_Baikal.jpg';
 
+const initialCards = [
+  { name: 'Пустыня Сахара', link: sahara },
+  { name: 'Карелия', link: kareliya },
+  { name: 'Карачаевск', link: karachaevsk },
+  { name: 'Эльбрус', link: elbrus },
+  { name: 'Домбаи', link: dombai },
+  { name: 'Байкал', link: Baikal }
+];
 const profileName = document.querySelector('.profile__name'); 
 const profileStatus = document.querySelector('.profile__status'); 
 const editButton = document.querySelector('.profile__edit-button'); 
@@ -203,7 +217,7 @@ const validationConfig = {
   errorClass: 'popup__error-message_visible',
   inputInvalidClass: 'popup__item_type_error',
   buttonSelector: '.popup__save-button',
-  buttonDisabledClass: 'popup__button_disabled'
+  buttonDisabledClass: 'popup__save-button_disabled'
 };
 
 const hideInputError = (inputElement, errorElement, config) => {
