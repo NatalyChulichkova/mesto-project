@@ -1,35 +1,37 @@
-// import { openPopup, closePopup } from './utils.js';
+import { openPopup, closePopup } from './utils.js';
 // import { elementTemplate, elementContainer, initialCards, switchLikes, deleteCard, increasePhoto, createElement, addInitialCards } from './card.js';
 // import { editButton, popupPlace, addButton, popupProfile, closeButtonProfile, closeButtonPlace, popupPhoto, closeButtonPhoto } from './index.js'
 // import { groupValidation, showInputError, hideInputError, checkInputValidity, setEventListeners, enableValidation, hasInvalidInput, toggleButtonState} from './validate.js';
 
-// const profileName = document.querySelector('.profile__name'); 
-// const profileStatus = document.querySelector('.profile__status'); 
-// const placeInput = document.querySelector('#place'); 
-// const linkInput = document.querySelector('#url');
-// const nameInput = document.querySelector('#name'); 
-// const jobInput = document.querySelector('#status'); 
+const buttonEsc = 27;
 
-// function handleSubmitForm (evt) {
-//   evt.preventDefault();
-//   profileName.textContent = nameInput.value;
-//   profileStatus.textContent = jobInput.value;
-//   closePopup(popupProfile);
-// }
+// Работа модальных окон
+function pushEsc(evt) {
+  if (evt.keyCode == buttonEsc) {
+    evt.preventDefault();
+    const activePopup = document.querySelector('.popup_opened');
+    closePopup(activePopup);
+  };
+};
 
-// function addElement(evt) {
-// 	evt.preventDefault();
-// 	const newCard = createElement(linkInput.value, placeInput.value);
-// 	elementContainer.prepend(newCard);
-// 	linkInput.value = '';
-// 	placeInput.value = '';
-// 	closePopup(popupPlace);
-// }
+function pushOverlay(evt) {
+  if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__exit-button')) {
+    closePopup(evt.currentTarget);
+  };
+};
 
-// function openProfile() {	
-// 	openPopup(popupProfile);
-// 	nameInput.value = profileName.textContent;
-// 	jobInput.value = profileStatus.textContent;
-// }
+// Редактирование имени
+function handleSubmitForm (evt) {
+  evt.preventDefault();
+  profileName.textContent = nameInput.value;
+  profileStatus.textContent = jobInput.value;
+  closePopup(popupProfile);
+};
 
-// export { handleSubmitForm, addElement, openProfile };
+function openProfile() {	
+	openPopup(popupProfile);
+	nameInput.value = profileName.textContent;
+	jobInput.value = profileStatus.textContent;
+};
+
+export  { pushEsc, pushOverlay, handleSubmitForm, openProfile };
