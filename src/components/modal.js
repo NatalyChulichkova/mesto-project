@@ -1,9 +1,11 @@
 import { openPopup, closePopup } from './utils.js';
-// import { elementTemplate, elementContainer, initialCards, switchLikes, deleteCard, increasePhoto, createElement, addInitialCards } from './card.js';
-// import { editButton, popupPlace, addButton, popupProfile, closeButtonProfile, closeButtonPlace, popupPhoto, closeButtonPhoto } from './index.js'
-// import { groupValidation, showInputError, hideInputError, checkInputValidity, setEventListeners, enableValidation, hasInvalidInput, toggleButtonState} from './validate.js';
 
 const buttonEsc = 27;
+const profileName = document.querySelector('.profile__name'); 
+const profileStatus = document.querySelector('.profile__status');
+const popupProfile = document.querySelector('#editprofile'); 
+const nameInput = document.querySelector('#name'); 
+const jobInput = document.querySelector('#status'); 
 
 // Работа модальных окон
 function pushEsc(evt) {
@@ -34,4 +36,4 @@ function openProfile() {
 	jobInput.value = profileStatus.textContent;
 };
 
-export  { pushEsc, pushOverlay, handleSubmitForm, openProfile };
+export  { popupProfile, pushEsc, pushOverlay, handleSubmitForm, openProfile };

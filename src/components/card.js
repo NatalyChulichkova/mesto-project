@@ -1,8 +1,30 @@
-import { openPopup } from './utils.js';
-import { popupPhoto } from './index.js'
+import { openPopup, closePopup } from './utils.js';
 
 const elementContainer = document.querySelector('.elements'); 
 const elementTemplate = document.querySelector('#element-template').content; 
+const photoLink = document.querySelector('.popup__image-big'); 
+const photoTitle = document.querySelector('.popup__title-big'); 
+const placeInput = document.querySelector('#place'); 
+const linkInput = document.querySelector('#url'); 
+const popupPhoto = document.querySelector('#photo'); 
+const popupPlace = document.querySelector('#new-post'); 
+
+// Фотокарточки
+import sahara from '../images/element_sahara.jpg';
+import kareliya from '../images/element_kareliya.jpg';
+import karachaevsk from '../images/element_karachaevsk.jpg';
+import elbrus from '../images/element_elbrus.jpg';
+import dombai from '../images/element_dombai.jpg';
+import Baikal from '../images/element_Baikal.jpg';
+
+const initialCards = [
+  { name: 'Пустыня Сахара', link: sahara },
+  { name: 'Карелия', link: kareliya },
+  { name: 'Карачаевск', link: karachaevsk },
+  { name: 'Эльбрус', link: elbrus },
+  { name: 'Домбаи', link: dombai },
+  { name: 'Байкал', link: Baikal }
+];
 
 // Действия с карточками
 function switchLikes(like) {
@@ -54,4 +76,4 @@ function addElement(evt) {
 	closePopup(popupPlace);
 }
 
-export { addElement, addInitialCards } 
+export { popupPhoto, popupPlace, addElement, addInitialCards } 
