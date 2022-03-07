@@ -5,20 +5,17 @@ import { popupProfile, handleSubmitForm, openProfile } from './modal.js';
 import { openPopup, closePopup } from './utils.js';
  
 const editButton = document.querySelector('.profile__edit-button'); 
-const addButton = document.querySelector('.profile__add-button'); 
-const closeButtonProfile = document.querySelector('.popup__close-button'); 
-// const saveButton = document.querySelector('.popup__save-button'); 
-// const formElement = document.querySelector('.popup__info'); 
-const closeButtonPlace = document.querySelector('.popup__close-button'); 
-// const createButton = document.querySelector('.popup__button'); 
-const closeButtonPhoto = document.querySelector('.popup__close-button'); 
+const addButton = document.querySelector('.profile__add-button');  
+const closeButtonPlace = popupPlace.querySelector('.popup__close-button'); 
+const closeButtonPhoto = popupPhoto.querySelector('.popup__close-button'); 
+const closeButtonProfile = popupProfile.querySelector('.popup__close-button');
 
 editButton.addEventListener('click', openProfile);
 popupPlace.addEventListener('submit', addElement);
 addButton.addEventListener('click', () => {openPopup(popupPlace);});
+closeButtonPhoto.addEventListener('click', () => {closePopup(popupPhoto);});
 closeButtonProfile.addEventListener('click', () => {closePopup(popupProfile);});
 closeButtonPlace.addEventListener('click', () => {closePopup(popupPlace);});
-closeButtonPhoto.addEventListener('click', () => {closePopup(popupPhoto);});
 popupProfile.addEventListener('submit', handleSubmitForm); 
 
 enableValidation({
