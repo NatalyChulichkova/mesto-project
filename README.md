@@ -12,6 +12,7 @@
 * Figma
 * Формы
 * Java Script
+* Webpack
 
 
 **Figma**
