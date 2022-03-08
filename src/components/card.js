@@ -1,4 +1,6 @@
 import { openPopup, closePopup } from './utils.js';
+import { disableButton } from './validate.js';
+import { addSave, configGroup } from './index.js';
 
 const elementContainer = document.querySelector('.elements'); 
 const elementTemplate = document.querySelector('#element-template').content; 
@@ -74,6 +76,7 @@ function addElement(evt) {
 	linkInput.value = '';
 	placeInput.value = '';
 	closePopup(popupPlace);
+  disableButton(addSave, configGroup);
 }
 
 export { popupPhoto, popupPlace, addElement, addInitialCards } 
