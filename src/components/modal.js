@@ -16,14 +16,14 @@ function pushEsc(evt) {
   };
 };
 
-function pushOverlay(evt) {
-  if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__exit-button')) {
+function handlePopupClose(evt) {
+  if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close-button')) {
     closePopup(evt.currentTarget);
   };
 };
 
 // Редактирование имени
-function handleSubmitForm (evt) {
+function handleProfileFormSubmit (evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileStatus.textContent = jobInput.value;
@@ -36,4 +36,4 @@ function openProfile() {
 	jobInput.value = profileStatus.textContent;
 };
 
-export  { popupProfile, pushEsc, pushOverlay, handleSubmitForm, openProfile };
+export  { popupProfile, pushEsc, handlePopupClose, handleProfileFormSubmit, openProfile };
