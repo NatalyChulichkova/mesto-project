@@ -17,7 +17,8 @@
 
     <section class="profile">
       <div class="profile__block">
-        <img class="profile__avatar" src="<%=require('./images/profile_avatar.jpg')%>" alt="Жак-Ив Кусто">
+        <img class="profile__avatar" src="<%=require('./images/profile_avatar.jpg')%>" alt="аватар">
+        <button class="profile__edit-avatar" type="button"></button>
         <div class="profile__info">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
           <button class="profile__edit-button" type="button"></button>
@@ -37,10 +38,10 @@
     <p class="footer__copyright">&#169; 2021 Mesto Russia</p>
   </footer> 
 
-  <section class="popup popup_edit-profile" id="editprofile">
+  <section class="popup popup_edit-profile" id="edit_profile">
     <div class="popup__content">
       <button class="popup__close-button" type="button"></button>
-      <form class="popup__info" name="form-info" id="form-info" novalidate>
+      <form class="popup__info" name="form-info" id="form_profile" novalidate>
         <h2 class="popup__title">Редактировать профиль</h2>
         <fieldset class="popup__form">
           <label class="input-container">
@@ -66,7 +67,28 @@
             <span class="popup__error-message" id="error-status"></span>
           </label>
         </fieldset> 
-        <button class="popup__save-button" type="submit">Сохранить</button>
+        <button class="popup__save-button" type="submit" id="popup__save-button">Сохранить</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="popup popup_edit-avatar">
+    <div class="popup__content">
+      <button class="popup__close-button" type="button"></button>
+      <form class="popup__info" name="form-profile" id="edit_avatar" novalidate>
+        <h2 class="popup__title">Обновить аватар</h2>
+        <fieldset class="popup__form">
+          <label class="input-container">
+            <input class="popup__item" 
+            type="url"
+            id="url" 
+            name="url-avatar" 
+            placeholder="Ссылка на картинку" 
+            required>
+            <span class="popup__error-message" id="error-url" ></span>
+          </label>
+        </fieldset>
+        <button class="popup__save-button" type="submit" id="avatar_button">Сохранить</button>
       </form>
     </div>
   </section>
@@ -74,7 +96,7 @@
   <section class="popup popup_new-post" id="new-post">
     <div class="popup__content">
       <button class="popup__close-button" type="button"></button>
-      <form class="popup__info" name="form-profile" novalidate>
+      <form class="popup__info" name="form-profile" id="add_element" novalidate>
         <h2 class="popup__title">Новое место</h2>
         <fieldset class="popup__form">
           <label class="input-container">
@@ -97,7 +119,7 @@
             <span class="popup__error-message" id="error-url"></span>
           </label>
         </fieldset> 
-        <button class="popup__save-button" type="submit" id="button-save">Создать</button>
+        <button class="popup__save-button" type="submit" id="button_create">Создать</button>
       </form>
     </div>
   </section>
@@ -105,18 +127,21 @@
   <section class="popup popup_photo" id="photo">
     <div class="popup__content-photo">
       <button class="popup__close-button" type="button"></button>
-      <img class="popup__image-big" src="#" alt="Фото">
+      <img class="popup__image-big" src="" alt="Фото">
       <h2 class="popup__title-big"></h2>
     </div>
   </section>
-    
+ 
   <template id="element-template">
     <li class="element">
       <button class="element__delete" type="button"></button>
-      <img class="element__image" src="#" alt="Фото">
+      <img class="element__image" src="" alt="Фото">
       <div class="element__item">
         <h2 class="element__title"></h2>
-        <button class="element__like" type="button"></button>
+        <div class="element__likes">
+          <button class="element__like" type="button"></button>
+          <p class="element__like-counter"></p>
+        </div>
       </div>
     </li>
   </template>
