@@ -1,6 +1,6 @@
 # Проектная работа №2: Место
 
-* [Ссылка на проект](https://natalychulichkova.github.io/mesto-project/index.html)
+* [Ссылка на проект](https://chulya.github.io/mesto-project/)
 
 ## Описание проекта
 Одностраничный адаптипный сайт, на котором можно делиться фотографиями из путешествий
