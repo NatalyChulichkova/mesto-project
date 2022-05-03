@@ -17,7 +17,6 @@ errorClass: 'popup__error-message_visible',
 inputInvalidClass: 'popup__item_type_error',
 buttonSelector: '.popup__save-button',
 buttonDisabledClass: 'popup__save-button_disabled'};
-
 let userId = 0;
 
 Promise.all([getProfile(), getCards()])
@@ -37,7 +36,7 @@ Promise.all([getProfile(), getCards()])
     })
   })
   .catch(err => console.error(err))
- 
+
 
 editButton.addEventListener('click', openProfile);
 popupPlace.addEventListener('submit', addElement);
@@ -49,3 +48,4 @@ formAvatar.addEventListener('submit', editAvatar);
 enableValidation(configGroup);
 
 export { createButton, configGroup, userId, profileAvatar };
+
