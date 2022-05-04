@@ -6,7 +6,7 @@ const config = {
   }
 };
 
-export const responseHandler = (res) => {
+export const handleResponse = (res) => {
   if (res.ok) {
     return res.json();
   } else {
@@ -19,7 +19,7 @@ export const getProfile = () => {
   return fetch(`${config.baseUrl}/users/me`,{
     headers: config.headers,
   })
-  .then(res => responseHandler(res));      
+  .then(res => handleResponse(res));      
 };
 
 // Сохранение новых данных пользователя на сервере
@@ -32,7 +32,7 @@ export const changeProfile = (name, about) => {
       about: about,
     })
   })
-  .then(res => responseHandler(res)); 
+  .then(res => handleResponse(res)); 
 };
 
 // Обновление фото пользователя
@@ -44,7 +44,7 @@ export const changeAvatar = (avatarUrl) => {
       avatar: avatarUrl
     })
   })
-  .then(res => responseHandler(res));  
+  .then(res => handleResponse(res));  
 };
 
 // Получение фото с сервера
@@ -52,7 +52,7 @@ export const getCards = () => {
   return fetch(`${config.baseUrl}/cards`, {
     headers: config.headers,
   })
-  .then(res => responseHandler(res));       
+  .then(res => handleResponse(res));       
 };
 
 // Добавление новой фото на сервер
@@ -65,7 +65,7 @@ export const createNewCard = (name, link) => {
       link: link,
     })
   })
-  .then(res => responseHandler(res));  
+  .then(res => handleResponse(res));  
 };
 
 // Удаление фото пользователя с сервера
@@ -74,7 +74,7 @@ export const deletePhoto = (cardId) => {
     method: 'DELETE',
     headers: config.headers,
   })
-  .then(res => responseHandler(res)); 
+  .then(res => handleResponse(res)); 
 };
 
 // Добавить лайк
@@ -83,7 +83,7 @@ export const addLike = (cardId) => {
     method: 'PUT',
     headers: config.headers,
   })
-  .then(res => responseHandler(res));       
+  .then(res => handleResponse(res));       
 };
 
 // Удаление лайка
@@ -92,5 +92,5 @@ export const deleteLike = (cardId) => {
     method: 'DELETE',
     headers: config.headers,
   })
-  .then(res => responseHandler(res)); 
+  .then(res => handleResponse(res)); 
 };

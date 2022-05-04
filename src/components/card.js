@@ -2,7 +2,7 @@ import { openPopup, closePopup } from './utils.js';
 import { disableButton } from './validate.js';
 import { createButton, configGroup, userId } from './index.js';
 import { addLike, deleteLike, deletePhoto, createNewCard } from './api.js';
-import { cardLoading } from './modal.js';
+import { renderLoading } from './modal.js';
 
 const elementContainer = document.querySelector('.elements'); 
 const elementTemplate = document.querySelector('#element-template').content; 
@@ -58,7 +58,7 @@ function createElement(name, link, cardId, likeCounter, isLiked, ownerId, userId
 
   if (ownerId == userId) {
     elementDeleteButton.classList.add('element__delete_visible');
-  };
+  }
 
   if (isLiked) elementLikeButton.classList.add('element__like_active');
   
@@ -76,7 +76,7 @@ function addCard(container, newElement) {
 // Добавление карточки
 function addElement(evt) {
   evt.preventDefault();
-  cardLoading(true, addElementForm);
+  renderLoading(true, addElementForm);
   const cardName = addElementForm.place.value;
   const cardPic = addElementForm.url.value;
   
@@ -89,7 +89,7 @@ function addElement(evt) {
     })
     .catch(err => console.error(err))
     .finally(() => {
-      cardLoading(false, addElementForm);
+      renderLoading(false, addElementForm);
     });
 }
 

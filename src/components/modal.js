@@ -17,13 +17,14 @@ const profileForm = document.querySelector('#form_profile');
 
 // Ожидание загрузки
 
-function cardLoading(isLoading, button) {
+function renderLoading(isLoading, button) {
+  const submitButton = button.querySelector(configGroup.buttonSelector);
   if (isLoading) {
-    button.querySelector(configGroup.buttonSelector).textContent = 'Сохранение...';  
+    submitButton.textContent = 'Сохранение...';  
   } else if (button == createButton){
-    button.querySelector(configGroup.buttonSelector).textContent = 'Создать';
+    submitButton.textContent = 'Создать';
   } else {
-    button.querySelector(configGroup.buttonSelector).textContent = 'Сохранить';
+    submitButton.textContent = 'Сохранить';
   }
 }
 
@@ -49,8 +50,7 @@ function handleProfileFormSubmit (evt) {
   const nameId = nameInput.value;
   const statusId = statusInput.value;
 
-  closePopup(popupProfile);
-  cardLoading(true, profileForm);
+  renderLoading(true, profileForm);
   changeProfile(nameId, statusId)
     .then(res => {
       profileName.textContent = res.name;
@@ -59,7 +59,7 @@ function handleProfileFormSubmit (evt) {
     })
     .catch(err => console.error(err))
     .finally(() => {
-      cardLoading(false, profileForm);
+      renderLoading(false, profileForm);
     });
 };
 
@@ -75,7 +75,7 @@ function editAvatar(evt) {
 
   const avatarUrl = avatarInput.value;
 
-  cardLoading(true, popupEditAvatar);
+  renderLoading(true, popupEditAvatar);
   changeAvatar(avatarUrl)
     .then(res => {
       profileAvatar.src = res.avatar;
@@ -85,9 +85,9 @@ function editAvatar(evt) {
     })
     .catch(err => console.error(err))
     .finally(() => {
-      cardLoading(false,popupEditAvatar);
+      renderLoading(false,popupEditAvatar);
     });
 };
 
-export  { profileStatus, profileName, popupProfile, pushEsc, handlePopupClose, handleProfileFormSubmit, openProfile, editAvatar, popupAvatar, cardLoading };
+export  { profileStatus, profileName, popupProfile, pushEsc, handlePopupClose, handleProfileFormSubmit, openProfile, editAvatar, popupAvatar, renderLoading };
 

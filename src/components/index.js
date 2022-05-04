@@ -27,11 +27,7 @@ Promise.all([getProfile(), getCards()])
     profileAvatar.src = userData.avatar;
     profileAvatar.alt = `Аватар ${userData.name}`;
     cards.forEach(card => {
-      const initialCards = createElement(card.name, card.link, card._id, card.likes.length, card.likes.some(item => item._id === userId));
-      const elementDeleteButton = initialCards.querySelector('.element__delete');
-      if (card.owner._id !== userId) {
-        elementDeleteButton.remove();
-      };
+      const initialCards = createElement(card.name, card.link, card._id, card.likes.length, card.likes.some(item => item._id === userId),card.owner._id, userId);
       addCard(elementContainer, initialCards);
     })
   })
